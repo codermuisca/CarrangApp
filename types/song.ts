@@ -1,7 +1,9 @@
+// types/song.ts
 export interface Song {
+  id: string;
   title: string;
   artist: string;
   tone: string;
   rhythm: string;
-  lyrics: string; // opcional
+  lyrics?: string; // ahora opcional
 }
