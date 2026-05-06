@@ -1,35 +1,41 @@
 import { ThemedText } from "@/components/themed-text";
+import { db } from "@/services/firebase";
 import { useLocalSearchParams } from "expo-router";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { ScrollView, View } from "react-native";
 
-const songs = [
-  {
-    id: "1",
-    title: "La cucharita",
-    author: "Jorge Velosa",
-    rhythm: "Carranga",
-    tone: "G",
-    lyrics: "Letra de ejemplo de La cucharita...",
-  },
-  {
-    id: "2",
-    title: "Julia Julia",
-    author: "Los Carrangueros",
-    rhythm: "Rumba criolla",
-    tone: "C",
-    lyrics: "Letra de ejemplo de Julia Julia...",
-  },
-];
+type Song = {
+  title: string;
+  author?: string;
+  rhythm?: string;
+  tone?: string;
+  lyrics?: string;
+};
 
 export default function SongDetail() {
-  const { id } = useLocalSearchParams();
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const [song, setSong] = useState<Song | null>(null);
 
-  const song = songs.find((item) => item.id === id);
+  useEffect(() => {
+    const fetchSong = async () => {
+      if (!id) return;
+
+      const songRef = doc(db, "songs", id);
+      const songSnap = await getDoc(songRef);
+
+      if (songSnap.exists()) {
+        setSong(songSnap.data() as Song);
+      }
+    };
+
+    fetchSong();
+  }, [id]);
 
   if (!song) {
     return (
       <View style={{ flex: 1, padding: 20 }}>
-        <ThemedText>Canción no encontrada</ThemedText>
+        <ThemedText>Cargando canción...</ThemedText>
       </View>
     );
   }
@@ -49,9 +55,7 @@ export default function SongDetail() {
       <ThemedText
         type="defaultSemiBold"
         style={{ marginTop: 30, marginBottom: 10 }}
-      >
-        Letra
-      </ThemedText>
+      ></ThemedText>
 
       <ThemedText>{song.lyrics}</ThemedText>
     </ScrollView>

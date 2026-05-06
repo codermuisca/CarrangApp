@@ -1,29 +1,50 @@
 import { ThemedText } from "@/components/themed-text";
+import { db } from "@/services/firebase";
 import { router } from "expo-router";
-import { Pressable, View } from "react-native";
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { Pressable, ScrollView, View } from "react-native";
 
-const songs = [
-  {
-    id: "1",
-    title: "La cucharita",
-    author: "Jorge Velosa",
-    rhythm: "Carranga",
-    tone: "G",
-    lyrics: "Letra de ejemplo de La cucharita...",
-  },
-  {
-    id: "2",
-    title: "Julia Julia",
-    author: "Los Carrangueros",
-    rhythm: "Rumba criolla",
-    tone: "C",
-    lyrics: "Letra de ejemplo de Julia Julia...",
-  },
-];
+type Song = {
+  id: string;
+  title: string;
+  author?: string;
+  rhythm?: string;
+  tone?: string;
+  lyrics?: string;
+};
 
 export default function Repertorio() {
+  const [songs, setSongs] = useState<Song[]>([]);
+
+  useEffect(() => {
+    const fetchSongs = async () => {
+      const querySnapshot = await getDocs(collection(db, "songs"));
+
+      const data: Song[] = querySnapshot.docs.map((document) => {
+        const songData = document.data();
+
+        return {
+          id: document.id,
+          title: String(songData.title ?? "Sin título"),
+          author: String(songData.author ?? ""),
+          rhythm: String(songData.rhythm ?? ""),
+          tone: String(songData.tone ?? ""),
+          lyrics: String(songData.lyrics ?? ""),
+        };
+      });
+
+      setSongs(data);
+    };
+
+    fetchSongs();
+  }, []);
+
   return (
-    <View style={{ flex: 1, padding: 20 }}>
+    <ScrollView
+      style={{ flex: 1 }}
+      contentContainerStyle={{ padding: 20, paddingBottom: 90 }}
+    >
       <ThemedText
         type="title"
         style={{ textAlign: "center", marginBottom: 30 }}
@@ -55,6 +76,6 @@ export default function Repertorio() {
           </Pressable>
         ))}
       </View>
-    </View>
+    </ScrollView>
   );
 }

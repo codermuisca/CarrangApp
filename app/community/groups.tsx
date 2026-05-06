@@ -14,7 +14,7 @@ const groups = [
   {
     id: "2",
     name: "Velosa y los Carrangueros del 25",
-    city: "Bucaramanga, Santander",
+    city: "Tinjacá, Boyacá",
     image: require("@/assets/images/grupo1.jpeg"),
     contactPhone: "311 111 1111",
     redes_sociales: "@heredero",
