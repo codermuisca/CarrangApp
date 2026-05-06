@@ -72,7 +72,9 @@ export default function Repertorio() {
               backgroundColor: "#1f1f1f",
             }}
           >
-            <ThemedText type="defaultSemiBold">{song.title}</ThemedText>
+            <ThemedText type="defaultSemiBold" style={{ color: "white" }}>
+              {song.title}
+            </ThemedText>
           </Pressable>
         ))}
       </View>
