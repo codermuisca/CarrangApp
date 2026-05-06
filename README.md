@@ -2,6 +2,7 @@
 
 Aplicación móvil para explorar, estudiar y preservar la música carranguera en Colombia 🇨🇴
 
+_________________
 🌱 Descripción
 
 CarrangApp es una app pensada para músicos, estudiantes y amantes de la música carranguera, donde pueden:
@@ -13,12 +14,15 @@ CarrangApp es una app pensada para músicos, estudiantes y amantes de la música
 
 Este proyecto busca preservar y difundir la cultura carranguera, apoyando el aprendizaje musical y la conexión con nuestras raíces.
 
-🚀 Tecnologías usadas
+_________________
+🚀 Tecnologías usadas:
 ⚛️ React Native
 📱 Expo
 🔥 Firebase (Firestore)
 🟦 TypeScript
 🧭 Expo Router
+
+_________________
 📂 Estructura del proyecto
 app/
  ├── (tabs)/
@@ -31,7 +35,9 @@ services/
 
 types/
  └── Song.ts              # Tipos de datos
-⚙️ Instalación
+
+_________________
+ ⚙️ Instalación
 
 Clona el repositorio:
 
@@ -41,6 +47,8 @@ cd CarrangApp
 Instala dependencias:
 
 npm install
+
+_________________
 ▶️ Ejecutar la app
 npx expo start
 
@@ -49,16 +57,8 @@ Puedes abrirla en:
 📱 Expo Go (recomendado)
 🤖 Emulador Android
 🍏 Simulador iOS
-🔐 Variables de entorno
 
-Crea un archivo .env en la raíz del proyecto:
-
-EXPO_PUBLIC_FIREBASE_API_KEY=...
-EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=...
-EXPO_PUBLIC_FIREBASE_PROJECT_ID=...
-
-⚠️ No subir este archivo a GitHub
-
+_________________
 🎯 Estado actual
 
 ✅ Conexión a Firestore
@@ -70,6 +70,8 @@ Búsqueda por tono y ritmo
 Favoritos
 Modo offline
 Carga masiva desde Excel
+
+_________________
 🌎 Visión
 
 Convertirse en una plataforma digital que:
@@ -77,17 +79,21 @@ Convertirse en una plataforma digital que:
 Preserve la música carranguera 🎸
 Apoye a músicos locales
 Conecte comunidades culturales en Colombia
+
+_________________
 🤝 Contribuciones
 
 Este proyecto está en crecimiento.
 Si quieres aportar ideas o código, eres bienvenido 🙌
 
+_________________
 👨‍💻 Autor
 
 Marco Aurelio (codermuisca)
 Colombia 🇨🇴
 Apasionado por la música, el arte y la tecnología
 
+_________________
 ⭐ Apoya el proyecto
 
 Si te gusta la idea, dale una estrella en GitHub ⭐
