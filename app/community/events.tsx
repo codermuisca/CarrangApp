@@ -7,10 +7,16 @@ export default function Events() {
       <ThemedText type="title">Eventos</ThemedText>
 
       <ThemedText style={{ marginTop: 20 }}>
-        Festival Carranguero - Noviembre
+        Actividad Pro restauración Templo Parroquial - 16 y 17 de Mayo - Barrio
+        Bonanza, Bogotá DC
+      </ThemedText>
+      <ThemedText>
+        Inauguración Templo Parroquial - Julio - Guacamayas Boyacá
       </ThemedText>
 
-      <ThemedText>Concurso en Duitama</ThemedText>
+      <ThemedText>
+        Festival Frailejón de Oro - Noviembre - Guicán Boyacá
+      </ThemedText>
     </View>
   );
 }

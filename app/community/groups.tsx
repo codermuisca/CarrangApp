@@ -8,7 +8,7 @@ const groups = [
     name: "Cagajón Carranguero",
     city: "Guacamayas, Boyacá",
     image: require("@/assets/images/cc_logo.png"),
-    contactPhone: "300 000 0000",
+    contactPhone: "322 416 3309 - 317 460 1398",
     redes_sociales: "@cagajon",
   },
   {
@@ -53,12 +53,11 @@ export default function Groups() {
           <Image
             source={group.image}
             style={{
-              width: 400,
-              height: 400,
+              width: 250,
+              height: 250,
               maxWidth: "100%",
               borderRadius: 12,
               marginBottom: 12,
-              backgroundColor: "#111",
             }}
             contentFit="contain"
           />
@@ -69,7 +68,7 @@ export default function Groups() {
 
           <ThemedText>Ciudad: {group.city}</ThemedText>
           <ThemedText>Contacto: {group.contactPhone}</ThemedText>
-          <ThemedText>Instagram: {group.redes_sociales}</ThemedText>
+          <ThemedText>Redes Sociales: {group.redes_sociales}</ThemedText>
         </View>
       ))}
     </ScrollView>
