@@ -1,50 +1,93 @@
-# Welcome to your Expo app 👋
+🎸 CarrangApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación móvil para explorar, estudiar y preservar la música carranguera en Colombia 🇨🇴
 
-## Get started
+🌱 Descripción
 
-1. Install dependencies
+CarrangApp es una app pensada para músicos, estudiantes y amantes de la música carranguera, donde pueden:
 
-   ```bash
-   npm install
-   ```
+🎵 Ver repertorio de canciones
+🎼 Consultar tono y ritmo
+📄 Leer letras completas
+📱 Acceder desde el celular de forma rápida
 
-2. Start the app
+Este proyecto busca preservar y difundir la cultura carranguera, apoyando el aprendizaje musical y la conexión con nuestras raíces.
 
-   ```bash
-   npx expo start
-   ```
+🚀 Tecnologías usadas
+⚛️ React Native
+📱 Expo
+🔥 Firebase (Firestore)
+🟦 TypeScript
+🧭 Expo Router
+📂 Estructura del proyecto
+app/
+ ├── (tabs)/
+ │   └── Repertorio.tsx   # Lista de canciones
+ ├── song/
+ │   └── [id].tsx         # Detalle de cada canción
 
-In the output, you'll find options to open the app in a
+services/
+ └── firebase.ts          # Configuración de Firebase
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+types/
+ └── Song.ts              # Tipos de datos
+⚙️ Instalación
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Clona el repositorio:
 
-## Get a fresh project
+git clone https://github.com/codermuisca/CarrangApp.git
+cd CarrangApp
 
-When you're ready, run:
+Instala dependencias:
 
-```bash
-npm run reset-project
-```
+npm install
+▶️ Ejecutar la app
+npx expo start
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Puedes abrirla en:
 
-## Learn more
+📱 Expo Go (recomendado)
+🤖 Emulador Android
+🍏 Simulador iOS
+🔐 Variables de entorno
 
-To learn more about developing your project with Expo, look at the following resources:
+Crea un archivo .env en la raíz del proyecto:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+EXPO_PUBLIC_FIREBASE_API_KEY=...
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=...
 
-## Join the community
+⚠️ No subir este archivo a GitHub
 
-Join our community of developers creating universal apps.
+🎯 Estado actual
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+✅ Conexión a Firestore
+✅ Listado dinámico de canciones
+✅ Vista individual por ID
+🚧 Próximamente:
+
+Búsqueda por tono y ritmo
+Favoritos
+Modo offline
+Carga masiva desde Excel
+🌎 Visión
+
+Convertirse en una plataforma digital que:
+
+Preserve la música carranguera 🎸
+Apoye a músicos locales
+Conecte comunidades culturales en Colombia
+🤝 Contribuciones
+
+Este proyecto está en crecimiento.
+Si quieres aportar ideas o código, eres bienvenido 🙌
+
+👨‍💻 Autor
+
+Marco Aurelio (codermuisca)
+Colombia 🇨🇴
+Apasionado por la música, el arte y la tecnología
+
+⭐ Apoya el proyecto
+
+Si te gusta la idea, dale una estrella en GitHub ⭐
