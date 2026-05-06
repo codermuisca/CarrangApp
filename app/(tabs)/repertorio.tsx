@@ -52,27 +52,27 @@ export default function Repertorio() {
         Repertorio 🎵
       </ThemedText>
 
-      <View
-        style={{
-          flexDirection: "row",
-          flexWrap: "wrap",
-          gap: 12,
-        }}
-      >
+      <View style={{ gap: 12 }}>
+        {/* 👇 Mensaje si no hay canciones */}
+        {songs.length === 0 && (
+          <ThemedText style={{ textAlign: "center" }}>
+            No hay canciones cargadas todavía.
+          </ThemedText>
+        )}
+
+        {/* Listado de canciones */}
         {songs.map((song) => (
           <Pressable
             key={song.id}
             onPress={() => router.push(`/song/${song.id}`)}
             style={{
-              width: "30%",
-              padding: 12,
-              borderRadius: 10,
+              width: "100%",
+              padding: 16,
+              borderRadius: 12,
               backgroundColor: "#1f1f1f",
             }}
           >
-            <ThemedText type="defaultSemiBold" style={{ textAlign: "center" }}>
-              {song.title}
-            </ThemedText>
+            <ThemedText type="defaultSemiBold">{song.title}</ThemedText>
           </Pressable>
         ))}
       </View>
