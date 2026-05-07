@@ -34,30 +34,94 @@ export default function SongDetail() {
 
   if (!song) {
     return (
-      <View style={{ flex: 1, padding: 20 }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 20,
+        }}
+      >
         <ThemedText>Cargando canción...</ThemedText>
       </View>
     );
   }
 
   return (
-    <ScrollView style={{ flex: 1, padding: 20 }}>
-      <ThemedText type="title" style={{ textAlign: "center" }}>
+    <ScrollView
+      style={{ flex: 1 }}
+      contentContainerStyle={{
+        padding: 20,
+        paddingBottom: 100,
+      }}
+    >
+      <ThemedText
+        type="title"
+        style={{
+          textAlign: "center",
+          marginBottom: 20,
+          lineHeight: 38,
+        }}
+      >
         {song.title}
       </ThemedText>
 
-      <ThemedText style={{ marginTop: 20 }}>Autor: {song.author}</ThemedText>
+      <View
+        style={{
+          backgroundColor: "#1f1f1f",
+          padding: 16,
+          borderRadius: 14,
+          marginBottom: 24,
+        }}
+      >
+        <ThemedText
+          style={{
+            color: "white",
+            marginBottom: 8,
+            lineHeight: 22,
+          }}
+        >
+          Autor: {song.author || "Desconocido"}
+        </ThemedText>
 
-      <ThemedText>Ritmo: {song.rhythm}</ThemedText>
+        <ThemedText
+          style={{
+            color: "white",
+            marginBottom: 8,
+            lineHeight: 22,
+          }}
+        >
+          Ritmo: {song.rhythm || "No definido"}
+        </ThemedText>
 
-      <ThemedText>Tono: {song.tone}</ThemedText>
+        <ThemedText
+          style={{
+            color: "white",
+            lineHeight: 22,
+          }}
+        >
+          Tono: {song.tone || "No definido"}
+        </ThemedText>
+      </View>
 
-      <ThemedText
-        type="defaultSemiBold"
-        style={{ marginTop: 30, marginBottom: 10 }}
-      ></ThemedText>
-
-      <ThemedText>{song.lyrics}</ThemedText>
+      <View
+        style={{
+          backgroundColor: "#1f1f1f",
+          padding: 18,
+          borderRadius: 14,
+        }}
+      >
+        <ThemedText
+          style={{
+            color: "white",
+            fontSize: 16,
+            lineHeight: 28,
+            flexShrink: 1,
+          }}
+        >
+          {song.lyrics || "No hay letra disponible."}
+        </ThemedText>
+      </View>
     </ScrollView>
   );
 }

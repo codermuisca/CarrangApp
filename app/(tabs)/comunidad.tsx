@@ -21,7 +21,13 @@ export default function Comunidad() {
           marginBottom: 20,
         }}
       >
-        <ThemedText style={{ textAlign: "center", fontSize: 18 }}>
+        <ThemedText
+          style={{
+            textAlign: "center",
+            fontSize: 18,
+            color: "white",
+          }}
+        >
           Grupos
         </ThemedText>
       </Pressable>
@@ -34,7 +40,13 @@ export default function Comunidad() {
           borderRadius: 10,
         }}
       >
-        <ThemedText style={{ textAlign: "center", fontSize: 18 }}>
+        <ThemedText
+          style={{
+            textAlign: "center",
+            fontSize: 18,
+            color: "white",
+          }}
+        >
           Eventos
         </ThemedText>
       </Pressable>
