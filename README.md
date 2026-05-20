@@ -1,99 +1,94 @@
 🎸 CarrangApp
 
-Aplicación móvil para explorar, estudiar y preservar la música carranguera en Colombia 🇨🇴
+Mobile application designed to explore, study, and preserve Carranga music in Colombia 🇨🇴
 
-_________________
-🌱 Descripción
+🌱 Description
 
-CarrangApp es una app pensada para músicos, estudiantes y amantes de la música carranguera, donde pueden:
+CarrangApp is an app created for musicians, students, and lovers of Carranga music, where users can:
 
-🎵 Ver repertorio de canciones
-🎼 Consultar tono y ritmo
-📄 Leer letras completas
-📱 Acceder desde el celular de forma rápida
+🎵 Explore a repertoire of songs
+🎼 Check song key and rhythm
+📄 Read full lyrics
+📱 Access everything quickly from mobile devices
 
-Este proyecto busca preservar y difundir la cultura carranguera, apoyando el aprendizaje musical y la conexión con nuestras raíces.
+This project aims to preserve and spread Carranga culture, supporting musical learning and strengthening the connection with Colombian cultural roots.
 
-_________________
-🚀 Tecnologías usadas:
+🚀 Technologies Used
+
 ⚛️ React Native
 📱 Expo
 🔥 Firebase (Firestore)
 🟦 TypeScript
 🧭 Expo Router
 
-_________________
-📂 Estructura del proyecto
+📂 Project Structure
 app/
- ├── (tabs)/
- │   └── Repertorio.tsx   # Lista de canciones
- ├── song/
- │   └── [id].tsx         # Detalle de cada canción
+├── (tabs)/
+│   └── Repertorio.tsx      # Song list
+│
+├── song/
+│   └── [id].tsx            # Song details page
 
 services/
- └── firebase.ts          # Configuración de Firebase
+└── firebase.ts             # Firebase configuration
 
 types/
- └── Song.ts              # Tipos de datos
+└── Song.ts                 # Data types
+⚙️ Installation
 
-_________________
- ⚙️ Instalación
-
-Clona el repositorio:
+Clone the repository:
 
 git clone https://github.com/codermuisca/CarrangApp.git
+
 cd CarrangApp
 
-Instala dependencias:
+Install dependencies:
 
 npm install
 
-_________________
-▶️ Ejecutar la app
+Run the application:
+
 npx expo start
 
-Puedes abrirla en:
+You can open it using:
 
-📱 Expo Go (recomendado)
-🤖 Emulador Android
-🍏 Simulador iOS
+📱 Expo Go (recommended)
+🤖 Android Emulator
+🍏 iOS Simulator
 
-_________________
-🎯 Estado actual
+🎯 Current Status
 
-✅ Conexión a Firestore
-✅ Listado dinámico de canciones
-✅ Vista individual por ID
-🚧 Próximamente:
+✅ Firestore connection
+✅ Dynamic song listing
+✅ Individual song pages by ID
 
-Búsqueda por tono y ritmo
-Favoritos
-Modo offline
-Carga masiva desde Excel
+🚧 Coming soon:
 
-_________________
-🌎 Visión
+Search by key and rhythm
+Favorites system
+Offline mode
+Bulk upload from Excel
+🌎 Vision
 
-Convertirse en una plataforma digital que:
+To become a digital platform that:
 
-Preserve la música carranguera 🎸
-Apoye a músicos locales
-Conecte comunidades culturales en Colombia
+🎸 Preserves Carranga music
+🤝 Supports local musicians
+🌱 Connects cultural communities across Colombia
 
-_________________
-🤝 Contribuciones
+🤝 Contributions
 
-Este proyecto está en crecimiento.
-Si quieres aportar ideas o código, eres bienvenido 🙌
+This project is growing continuously.
 
-_________________
-👨‍💻 Autor
+If you would like to contribute ideas or code, you are very welcome 🙌
+
+👨‍💻 Author
 
 Marco Aurelio (codermuisca)
 Colombia 🇨🇴
-Apasionado por la música, el arte y la tecnología
 
-_________________
-⭐ Apoya el proyecto
+Passionate about music, art, and technology.
 
-Si te gusta la idea, dale una estrella en GitHub ⭐
+⭐ Support the Project
+
+If you like the idea, consider giving the repository a star on GitHub ⭐
