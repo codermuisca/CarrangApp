@@ -1,4 +1,4 @@
-🎸 CarrangApp
+# 🎸 CarrangApp
 
 Mobile application designed to explore, study, and preserve Carranga music in Colombia 🇨🇴
 
@@ -13,7 +13,9 @@ CarrangApp is an app created for musicians, students, and lovers of Carranga mus
 
 This project aims to preserve and spread Carranga culture, supporting musical learning and strengthening the connection with Colombian cultural roots.
 
-🚀 Technologies Used
+---
+
+# 🚀 Technologies Used
 
 ⚛️ React Native
 📱 Expo
@@ -21,7 +23,11 @@ This project aims to preserve and spread Carranga culture, supporting musical le
 🟦 TypeScript
 🧭 Expo Router
 
-📂 Project Structure
+---
+
+# 📂 Project Structure
+
+```txt id="i9m7kx"
 app/
 ├── (tabs)/
 │   └── Repertorio.tsx      # Song list
@@ -34,21 +40,31 @@ services/
 
 types/
 └── Song.ts                 # Data types
-⚙️ Installation
+```
+
+---
+
+# ⚙️ Installation
 
 Clone the repository:
 
+```bash id="w2e8dr"
 git clone https://github.com/codermuisca/CarrangApp.git
 
 cd CarrangApp
+```
 
 Install dependencies:
 
+```bash id="sp6t4w"
 npm install
+```
 
 Run the application:
 
+```bash id="z1n5go"
 npx expo start
+```
 
 You can open it using:
 
@@ -56,7 +72,9 @@ You can open it using:
 🤖 Android Emulator
 🍏 iOS Simulator
 
-🎯 Current Status
+---
+
+# 🎯 Current Status
 
 ✅ Firestore connection
 ✅ Dynamic song listing
@@ -64,11 +82,14 @@ You can open it using:
 
 🚧 Coming soon:
 
-Search by key and rhythm
-Favorites system
-Offline mode
-Bulk upload from Excel
-🌎 Vision
+* Search by key and rhythm
+* Favorites system
+* Offline mode
+* Bulk upload from Excel
+
+---
+
+# 🌎 Vision
 
 To become a digital platform that:
 
@@ -76,19 +97,25 @@ To become a digital platform that:
 🤝 Supports local musicians
 🌱 Connects cultural communities across Colombia
 
-🤝 Contributions
+---
+
+# 🤝 Contributions
 
 This project is growing continuously.
 
 If you would like to contribute ideas or code, you are very welcome 🙌
 
-👨‍💻 Author
+---
+
+# 👨‍💻 Author
 
 Marco Aurelio (codermuisca)
 Colombia 🇨🇴
 
 Passionate about music, art, and technology.
 
-⭐ Support the Project
+---
+
+# ⭐ Support the Project
 
 If you like the idea, consider giving the repository a star on GitHub ⭐
