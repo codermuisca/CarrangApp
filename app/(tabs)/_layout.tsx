@@ -26,6 +26,7 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="repertorio"
         options={{
@@ -35,12 +36,23 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="comunidad"
         options={{
           title: "Comunidad",
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="globe.fill" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="perfil"
+        options={{
+          title: "Perfil",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="person.fill" color={color} />
           ),
         }}
       />

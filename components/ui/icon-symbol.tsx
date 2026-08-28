@@ -22,6 +22,7 @@ const MAPPING = {
   "globe.fill": "public",
   "book.fill": "menu-book",
   "chevron.left.forwardslash.chevron.right": "code",
+  "person.fill": "person",
   "chevron.right": "chevron-right",
 } as IconMapping;
 
