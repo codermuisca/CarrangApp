@@ -43,40 +43,62 @@ export default function Repertorio() {
   return (
     <ScrollView
       style={{ flex: 1 }}
-      contentContainerStyle={{ padding: 20, paddingBottom: 90 }}
+      contentContainerStyle={{
+        padding: 20,
+        paddingBottom: 90,
+        alignItems: "center",
+      }}
     >
-      <ThemedText
-        type="title"
-        style={{ textAlign: "center", marginBottom: 30 }}
+      <View
+        style={{
+          width: "100%",
+          maxWidth: 500,
+        }}
       >
-        Repertorio 🎵
-      </ThemedText>
+        <ThemedText
+          type="title"
+          style={{
+            textAlign: "center",
+            marginBottom: 30,
+          }}
+        >
+          Repertorio 🎵
+        </ThemedText>
 
-      <View style={{ gap: 12 }}>
-        {/* 👇 Mensaje si no hay canciones */}
-        {songs.length === 0 && (
-          <ThemedText style={{ textAlign: "center" }}>
-            No hay canciones cargadas todavía.
-          </ThemedText>
-        )}
-
-        {/* Listado de canciones */}
-        {songs.map((song) => (
-          <Pressable
-            key={song.id}
-            onPress={() => router.push(`/song/${song.id}`)}
-            style={{
-              width: "100%",
-              padding: 16,
-              borderRadius: 12,
-              backgroundColor: "#1f1f1f",
-            }}
-          >
-            <ThemedText type="defaultSemiBold" style={{ color: "white" }}>
-              {song.title}
+        <View
+          style={{
+            width: "100%",
+            gap: 12,
+          }}
+        >
+          {songs.length === 0 && (
+            <ThemedText style={{ textAlign: "center" }}>
+              No hay canciones cargadas todavía.
             </ThemedText>
-          </Pressable>
-        ))}
+          )}
+
+          {songs.map((song) => (
+            <Pressable
+              key={song.id}
+              onPress={() => router.push(`/song/${song.id}`)}
+              style={{
+                width: "100%",
+                padding: 16,
+                borderRadius: 12,
+                backgroundColor: "#1f1f1f",
+              }}
+            >
+              <ThemedText
+                type="defaultSemiBold"
+                style={{
+                  color: "white",
+                }}
+              >
+                {song.title}
+              </ThemedText>
+            </Pressable>
+          ))}
+        </View>
       </View>
     </ScrollView>
   );

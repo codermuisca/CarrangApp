@@ -51,12 +51,6 @@ export default function Home() {
       }
     >
       <ThemedView style={styles.container}>
-        {name !== "" && (
-          <ThemedText style={styles.greeting}>
-            Hola, {name} Bienvenido a:
-          </ThemedText>
-        )}
-
         <ThemedText type="title" style={styles.centerText}>
           CarrangApp 🎵
         </ThemedText>
@@ -77,13 +71,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 16,
-  },
-
-  greeting: {
-    fontSize: 20,
-    fontWeight: "600",
-    marginBottom: 15,
-    textAlign: "center",
   },
 
   centerText: {
