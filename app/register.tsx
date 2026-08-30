@@ -1,7 +1,11 @@
 import { ThemedText } from "@/components/themed-text";
 import { auth, db } from "@/services/firebase";
 import { router } from "expo-router";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  validatePassword,
+} from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { Pressable, StyleSheet, TextInput, View } from "react-native";
@@ -26,15 +30,45 @@ export default function Register() {
       return;
     }
 
-    if (password.length < 6) {
-      setMessage("La contraseña debe tener mínimo 6 caracteres.");
-      return;
-    }
-
     try {
       setLoading(true);
 
-      // 1. Crear usuario en Firebase Authentication
+      // 1. Validar la contraseña usando la política configurada en Firebase
+      const passwordStatus = await validatePassword(auth, password);
+
+      if (!passwordStatus.isValid) {
+        const problems: string[] = [];
+
+        if (passwordStatus.meetsMinPasswordLength === false) {
+          problems.push("mínimo 12 caracteres");
+        }
+
+        if (passwordStatus.containsLowercaseLetter === false) {
+          problems.push("una letra minúscula");
+        }
+
+        if (passwordStatus.containsUppercaseLetter === false) {
+          problems.push("una letra mayúscula");
+        }
+
+        if (passwordStatus.containsNumericCharacter === false) {
+          problems.push("un número");
+        }
+
+        if (passwordStatus.containsNonAlphanumericCharacter === false) {
+          problems.push("un carácter especial");
+        }
+
+        if (problems.length > 0) {
+          setMessage(`La contraseña debe cumplir: ${problems.join(", ")}.`);
+        } else {
+          setMessage("La contraseña no cumple la política de seguridad.");
+        }
+
+        return;
+      }
+
+      // 2. Crear usuario en Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email.trim(),
@@ -43,12 +77,12 @@ export default function Register() {
 
       const user = userCredential.user;
 
-      // 2. Guardar el nombre también en Firebase Authentication
+      // 3. Guardar el nombre también en Firebase Authentication
       await updateProfile(user, {
         displayName: name.trim(),
       });
 
-      // 3. Crear perfil en Firestore
+      // 4. Crear perfil en Firestore
       await setDoc(doc(db, "users", user.uid), {
         name: name.trim(),
         email: user.email ?? "",
@@ -57,7 +91,7 @@ export default function Register() {
         createdAt: serverTimestamp(),
       });
 
-      // 4. Entrar a CarrangApp
+      // 5. Entrar a CarrangApp
       router.replace("/");
     } catch (error: any) {
       console.error(error);
@@ -67,7 +101,7 @@ export default function Register() {
       } else if (error.code === "auth/invalid-email") {
         setMessage("Escribe un correo electrónico válido.");
       } else if (error.code === "auth/weak-password") {
-        setMessage("La contraseña debe tener mínimo 6 caracteres.");
+        setMessage("La contraseña no cumple la política de seguridad.");
       } else if (error.code === "permission-denied") {
         setMessage("La cuenta fue creada, pero no se pudo crear el perfil.");
       } else {
@@ -112,6 +146,10 @@ export default function Register() {
         secureTextEntry
       />
 
+      <ThemedText style={styles.passwordHelp}>
+        Usa una contraseña de mínimo 12 caracteres.
+      </ThemedText>
+
       {message !== "" && (
         <ThemedText style={styles.message}>{message}</ThemedText>
       )}
@@ -155,6 +193,15 @@ const styles = StyleSheet.create({
     color: "#fff",
     padding: 15,
     borderRadius: 10,
+    marginBottom: 15,
+  },
+
+  passwordHelp: {
+    width: "100%",
+    maxWidth: 400,
+    fontSize: 13,
+    color: "#aaa",
+    marginTop: -5,
     marginBottom: 15,
   },
 
