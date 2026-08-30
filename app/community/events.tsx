@@ -1,5 +1,5 @@
 import { ThemedText } from "@/components/themed-text";
-import { ScrollView, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 const events = [
   {
@@ -22,38 +22,75 @@ const events = [
 export default function Events() {
   return (
     <ScrollView
-      style={{ flex: 1 }}
-      contentContainerStyle={{ padding: 20, paddingBottom: 90 }}
+      style={styles.scroll}
+      contentContainerStyle={styles.scrollContent}
     >
-      <ThemedText
-        type="title"
-        style={{ textAlign: "center", marginBottom: 24 }}
-      >
-        Eventos
-      </ThemedText>
+      <View style={styles.content}>
+        <ThemedText type="title" style={styles.title}>
+          Eventos 📅
+        </ThemedText>
 
-      <View style={{ gap: 14 }}>
-        {events.map((event, index) => (
-          <View
-            key={index}
-            style={{
-              padding: 16,
-              borderRadius: 14,
-              backgroundColor: "#1f1f1f",
-            }}
-          >
-            <ThemedText type="defaultSemiBold" style={{ fontSize: 17 }}>
-              {event.title}
-            </ThemedText>
+        <View style={styles.eventsContainer}>
+          {events.map((event, index) => (
+            <View key={index} style={styles.card}>
+              <ThemedText type="defaultSemiBold" style={styles.eventTitle}>
+                {event.title}
+              </ThemedText>
 
-            <ThemedText style={{ marginTop: 8 }}>📅 {event.date}</ThemedText>
+              <ThemedText style={styles.date}>📅 {event.date}</ThemedText>
 
-            <ThemedText style={{ marginTop: 4, opacity: 0.75 }}>
-              📍 {event.place}
-            </ThemedText>
-          </View>
-        ))}
+              <ThemedText style={styles.place}>📍 {event.place}</ThemedText>
+            </View>
+          ))}
+        </View>
       </View>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
+
+  scrollContent: {
+    padding: 20,
+    paddingBottom: 90,
+    alignItems: "center",
+  },
+
+  content: {
+    width: "100%",
+    maxWidth: 500,
+  },
+
+  title: {
+    textAlign: "center",
+    marginBottom: 30,
+  },
+
+  eventsContainer: {
+    width: "100%",
+    gap: 14,
+  },
+
+  card: {
+    width: "100%",
+    padding: 16,
+    borderRadius: 14,
+    backgroundColor: "#1f1f1f",
+  },
+
+  eventTitle: {
+    fontSize: 17,
+  },
+
+  date: {
+    marginTop: 8,
+  },
+
+  place: {
+    marginTop: 4,
+    opacity: 0.75,
+  },
+});

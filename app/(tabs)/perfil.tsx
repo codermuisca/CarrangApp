@@ -245,17 +245,18 @@ const styles = StyleSheet.create({
 
   saveButton: {
     width: "100%",
-    maxWidth: 400,
-    backgroundColor: "#2E7D32",
+    maxWidth: 150,
+    backgroundColor: "#628f64",
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
+    marginTop: 20,
   },
 
   logoutButton: {
     width: "100%",
-    maxWidth: 400,
-    backgroundColor: "#b3261e",
+    maxWidth: 150,
+    backgroundColor: "#be625e",
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
@@ -269,5 +270,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
+    fontSize: 12,
   },
 });

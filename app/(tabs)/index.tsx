@@ -52,7 +52,7 @@ export default function Home() {
     >
       <ThemedView style={styles.container}>
         <ThemedText type="title" style={styles.centerText}>
-          CarrangApp 🎵
+          CarrangApp 🎼
         </ThemedText>
 
         <ThemedText style={styles.subtitle}>

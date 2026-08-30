@@ -62,7 +62,7 @@ export default function Repertorio() {
             marginBottom: 30,
           }}
         >
-          Repertorio 🎵
+          Repertorio 📖
         </ThemedText>
 
         <View
